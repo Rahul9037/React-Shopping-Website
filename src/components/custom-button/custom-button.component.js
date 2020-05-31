@@ -1,11 +1,20 @@
 import React from 'react';
-import './custom-button.styles.css';
+//import './custom-button.styles.css';
+import {CustomButtonContainer} from './custom-button.styles';
 
-const CustomButton = ({children , isGoogleButton , ...otherProps}) => {
+// const CustomButton = ({children , isGoogleButton , inverted , ...otherProps}) => {
+//     return(
+//         <button className={`${inverted ? 'inverted' : ''} ${isGoogleButton ? 'google-button' : ''} custom-button`} {...otherProps}>
+//             {children}
+//             </button>
+//     )
+// }
+
+const CustomButton = ({children , ...props}) => {
     return(
-        <button className={`${isGoogleButton ? 'google-button' : ''} custom-button`} {...otherProps}>
+        <CustomButtonContainer {...props}>
             {children}
-            </button>
+        </CustomButtonContainer>
     )
 }
 
