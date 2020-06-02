@@ -23,17 +23,20 @@ class App extends Component {
 
       if (userAuth) {   
         const userRef = await createUserProfileDocument(userAuth)
-        userRef.onSnapshot(snaShot => {
+        userRef.onSnapshot(snapShot => {
           //console.log(snaShot.data());  
           setCurrentUser({
-              id: snaShot.id,
-              ...snaShot.data()
+              id: snapShot.id,
+              ...snapShot.data()
             }
           )
         })
       }
       setCurrentUser(userAuth)
     })
+
+
+
   }
 
   componentWillUnmount() {
