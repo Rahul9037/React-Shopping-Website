@@ -9,6 +9,12 @@ export const CollectionPreviewContainer  = styled.div`
 export const TitleContainer = styled.div`
     font-size: 28px;
     margin-bottom: 25px;
+    cursor: pointer;
+    font-weight : bolder;
+
+    &:hover {
+        opacity : 0.8;
+    }
 `;
 
 export const PreviewContainer = styled.div`

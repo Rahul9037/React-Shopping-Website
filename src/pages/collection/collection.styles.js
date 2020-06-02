@@ -1,6 +1,5 @@
-import styled , {css} from 'styled-components';
+import styled from 'styled-components';
 
-import {CollectionItemContainer} from '../../components/collection-item/collection-item.styles';
 
 export const CollectionContainer = styled.div`
     display: flex;

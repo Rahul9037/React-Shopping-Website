@@ -9,11 +9,11 @@ import { createStructuredSelector } from 'reselect';
 import { selectCollectionsPreview } from '../../redux/shop/shop.selector';
 import { connect } from 'react-redux';
 
-const CollectionOverView = ({ collections }) => {
+const CollectionOverView = ({ collections}) => {
     return(
         <CollectionOverviewContainer>
-            {collections.map(({ id, ...otherCollectionProps }) =>
-                <CollectionPreview key={id} {...otherCollectionProps} />
+            {collections.map(({ id, ...otherCollectionProps }) => 
+                <CollectionPreview key={id} {...otherCollectionProps} /> 
             )}
         </CollectionOverviewContainer>
     )
