@@ -1,5 +1,4 @@
 import {  FETCH_COLLECTIONS_FAILED, FETCH_COLLECTIONS_START, FETCH_COLLECTIONS_SUCCESS } from '../../types/types';
-import { firestore, ConvertCollectionsToMap } from '../../firebase/firebase.utils';
 
 
 export const FetchCollectionsStart = () => ({
@@ -16,16 +15,16 @@ export const FetchCollectionsFailed = errorMessage => ({
     data : errorMessage
 })
 
-export const FetchCollectionsStartAsync = () => {
-    return dispatch => {
-        const collectionRef = firestore.collection('collections')
-        dispatch(FetchCollectionsStart())
-        collectionRef
-        .get()
-        .then(snapShot => {
-            const collectionMap = ConvertCollectionsToMap(snapShot)
-            dispatch(FetchCollectionsSuccess(collectionMap))
-        })
-        .catch(error => dispatch(FetchCollectionsFailed(error.message)))
-    }
-}
+// export const FetchCollectionsStartAsync = () => {
+//     return dispatch => {
+//         const collectionRef = firestore.collection('collections')
+//         dispatch(FetchCollectionsStart())
+//         collectionRef
+//         .get()
+//         .then(snapShot => {
+//             const collectionMap = ConvertCollectionsToMap(snapShot)
+//             dispatch(FetchCollectionsSuccess(collectionMap))
+//         })
+//         .catch(error => dispatch(FetchCollectionsFailed(error.message)))
+//     }
+// }

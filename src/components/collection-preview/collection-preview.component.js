@@ -6,7 +6,7 @@ import { CollectionPreviewContainer , PreviewContainer , TitleContainer } from '
 import { withRouter } from 'react-router-dom';
 
 const CollectionPreview = ({ title, items , match , routeName , history}) => {
-    console.log(match)
+   
     return (
         <CollectionPreviewContainer>
             <TitleContainer onClick={ () => history.push(`${match.url}/${routeName}`) } >{title.toUpperCase()}</TitleContainer>

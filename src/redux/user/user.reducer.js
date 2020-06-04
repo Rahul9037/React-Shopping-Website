@@ -1,19 +1,36 @@
-import {SET_CURRENT_USER} from "../../types/types";
+import { SIGNIN_SUCCESS, SIGNIN_FAILED, SIGNOUT_SUCCESS, SIGNOUT_FAILED,SIGNUP_FAILED } from "../../types/types";
 
 const INITIAL_STATE = {
-    currentUser : null
+    currentUser: null,
+    errorMessage: null
 }
 
-const userReducer = (state = INITIAL_STATE , action) => {
-    switch(action.type)
-    {
-        case  SET_CURRENT_USER :
-        return {
-            ...state,
-            currentUser : action.data
-        }
-        default :
-        return state
+const userReducer = (state = INITIAL_STATE, action) => {
+    switch (action.type) {
+        case SIGNIN_SUCCESS:
+            return {
+                ...state,
+                currentUser: action.data,
+                errorMessage: null
+            }
+
+        case SIGNIN_FAILED:
+        case SIGNOUT_FAILED:
+        case SIGNUP_FAILED:
+            return {
+                ...state,
+                errorMessage: action.data
+            }
+
+        case SIGNOUT_SUCCESS:
+            return {
+                ...state,
+                currentUser: null,
+                errorMessage: null
+            }
+            
+        default:
+            return state
     }
 }
 
