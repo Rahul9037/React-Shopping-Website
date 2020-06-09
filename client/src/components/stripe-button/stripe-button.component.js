@@ -35,6 +35,7 @@ const StripeCheckoutButton = ({ price }) => {
         description={`Your Total is ${price} INR`}
         panelLabel='Pay Now'
         token={onToken}/>
+        
 
     )
 }
