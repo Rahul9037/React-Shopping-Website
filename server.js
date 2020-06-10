@@ -34,6 +34,7 @@ app.post('/payment', (req, res) => {
     amount: req.body.amount,
     currency: 'INR'
   };
+  
 
   stripe.charges.create(body, (stripeErr, stripeRes) => {
     if (stripeErr) {
