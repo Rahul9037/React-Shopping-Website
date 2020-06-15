@@ -27,8 +27,6 @@ export const MenuItemContainer = styled.div`
     justify-content: center;
     border: 1px solid black;
     margin: 0 7.5px 15px;
-    background-position: center;
-    background-size: cover;
     overflow: hidden;
     cursor: pointer;
 
@@ -53,11 +51,18 @@ export const MenuItemContainer = styled.div`
 
     ${GetSizeStyles}
 
+
+    @media screen and (max-width : 800px) {
+        height : 200px;
+    }
+
 `;
 
 export const BackgroundImage = styled.div`
     width: 100%;
     height: 100%;
+    background-position: center;
+    background-size: cover;
 `;
 
 export const ContentContainer = styled.div`

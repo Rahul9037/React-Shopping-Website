@@ -20,7 +20,6 @@ export function* getSnapshotFromUserAuth(userAuth , additionalData) {
 
 export function* signInWithGoogle() {
     try {
-        console.log("fired");
         const { user } = yield auth.signInWithPopup(googleProvider);
         yield getSnapshotFromUserAuth(user)
     }
